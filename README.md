@@ -12,7 +12,7 @@ In Challenge 3 the task was to create a password generator with the following re
 - Password is displayed on the screen after selecting criterias
 
 ## Screenshot
-![](Assets\screenshot1.png)
+![](Assets/screenshot1.png)
 
 ## URL
 https://thomasnguyen546.github.io/Password-Generator/
