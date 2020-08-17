@@ -47,11 +47,11 @@ var specialArray = ["!", "#", "$", "%", "&", "(", ")", "[", "]", "*", "+", ",", 
 // Function for Password Length
 function characterLength() {
     // prompt for the character length
-    var length = parseInt(prompt("How long would you like your password to be? \nPassword must be at least 8 characters long and no more than 128 characters. \nEnter password length here:"));
+    var length = window.prompt("How long would you like your password to be? \nPassword must be at least 8 characters long and no more than 128 characters. \n \n Enter password length here:");
     
     while(!length || length < 8 || length > 128) {
-      alert("Please enter a valid character length.");
-      length = parseInt(prompt("How long would you like your password to be? \nPassword must be at least 8 characters long and no more than 128 characters. \nEnter password length here:"));
+      window.alert("Please enter a valid character length.");
+      length = window.prompt("How long would you like your password to be? \nPassword must be at least 8 characters long and no more than 128 characters. \nEnter password length here:");
     }
     
     // confirmation
@@ -67,9 +67,9 @@ function characterLength() {
 // Function for Character Types
 function decide() {
     // prompt for each character type in the charOptions array
-    var useChar = parseInt(prompt("Set the value to 'TRUE' if you'd like to use that character type in your password or to 'FALSE' to exclude it. \nChange the 'TRUE' and 'FALSE' value by entering the number corresponding to the character list. \nEnter 9 once you are satisfied with your selections. \n 1: " + character.charOptions[0].name + " USE: " + character.charOptions[0].use + " \n 2: " + character.charOptions[1].name + " USE: " + character.charOptions[1].use + " \n 3: " + character.charOptions[2].name + " USE: " + character.charOptions[2].use +" \n 4: " + character.charOptions[3].name + " USE: " + character.charOptions[3].use));
+    var useCharacter = parseInt(prompt("To include specific characters change the value to 'True' or 'False' by pressing the corresponding number on the list. \n \n Enter the number '5' to confirm selection \n 1: " + character.charOptions[0].name +":" + " " + character.charOptions[0].use + " \n 2: " + character.charOptions[1].name +":" + " " + character.charOptions[1].use + " \n 3: " + character.charOptions[2].name+ ":" + " " + character.charOptions[2].use +" \n 4: " + character.charOptions[3].name + ":" + " " + character.charOptions[3].use));
 
-    switch (useChar) {
+    switch (useCharacter) {
       case 1:
         character.charOptions[0].use = !character.charOptions[0].use;
         decide();
@@ -92,7 +92,7 @@ function decide() {
           if(!character.charOptions[i].use){
             var final = confirm("Are you sure you do not want to use " + character.charOptions[i].name + "?")
             if(!final) {
-              alert("To use" + character.charOptions[i].characters + "set its use to 'TRUE'");
+              window.alert("To use" + character.charOptions[i].characters + "set its use to 'TRUE'");
               decide();
             }
           } else {
@@ -102,12 +102,12 @@ function decide() {
         }
         break;
       default: 
-        alert("Please enter numbers 1 through 4 to change the use of that character type. \nEnter number 5 to continue with your selections.");
+        window.alert("Please enter numbers 1 through 4 to change the use of that character type. \nEnter number 5 to continue with your selections.");
         decide();
     }
     
     while (character.digits === "") {
-      alert("Your password must contain at least one character type. Please set one to 'TRUE'");
+      window.alert("Your password must contain at least one character type. Please set one to 'TRUE'");
       decide();
     }
   }
